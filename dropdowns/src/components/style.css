@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+:root {
+  --blue: #4d73c9;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.dropdown {
+  position: relative;
+  border: 2px solid var(--blue);
+  border-radius: 0.2rem;
+  width: 240px;
+  height: 50px;
+  font-family: "Roboto", sans-serif;
+  color: black;
+  font-size: 1rem;
+  padding: 15px 0;
+}
+
+.dropdownLabel {
+  position: absolute;
+  left: 4%;
+  top: -20%;
+  padding: 0 0.4rem;
+  color: var(--blue);
+  background-color: white;
+  font-size: 1rem;
+}
+
+.dropdownSelected {
+  width: 210px;
+  height: 50px;
+  float: left;
+  overflow: hidden;
+  white-space: nowrap;
+  text-align: left;
+  text-indent: 15px;
+  text-overflow: ellipsis;
+}
+
+.dropdown .arrow {
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 35%;
+  right: 7%;
+  transition: 0.4s ease;
+  transform: rotate(-45deg);
+  float: right;
+  background-color: white;
+  border-left: black 2px solid;
+  border-bottom: black 2px solid;
+}
+
+.dropdown .arrow.open {
+  transform: rotate(135deg);
+  transition: transform 0.5s;
+}
+
+.dropdown .arrow.close {
+  transform: rotate(-45deg);
+  transition: transform 0.5s;
+}
+
+.dropdownContent {
+  list-style: none;
+  position: absolute;
+  top: 105%;
+  width: 100%;
+  background-color: #f9f9f9;
+  box-shadow: 2px 2px 4px gray;
+  max-height: 160px;
+  overflow-y: auto;
+  transform-origin: 50% 0;
+  transform: scale(1, 0);
+  transition: transform 0.15s ease-in-out 0.15s;
+}
+
+/* Purely for good looks */
+.dropdownContent::-webkit-scrollbar {
+  width: 0.9rem;
+}
+
+.dropdownContent::-webkit-scrollbar-track {
+  background: #eee;
+  border-left: 1px solid #ccc;
+}
+
+.dropdownContent::-webkit-scrollbar-thumb {
+  background: #a9a9a9;
+  border-radius: 9px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+
+.dropdownContent.active {
+  transform: scale(1, 1);
+}
+
+.dropdownItem {
+  display: flex;
+  height: 40px;
+  line-height: 40px;
+  text-indent: 10px;
+  cursor: pointer;
+}
+
+.dropdownItem.none {
+  font-style: italic;
+}
+
+.dropdownItem input {
+  margin-left: 1rem;
+  cursor: pointer;
+}
+
+.dropdownItem input[type="radio"] {
+  position: fixed;
+  opacity: 0;
+}
+
+.dropdownItem:hover {
+  background-color: rgba(193, 231, 244, 0.5);
+}
+
+.dropdownItem.highlight {
+  background-color: rgba(193, 231, 244, 0.5);
+}
