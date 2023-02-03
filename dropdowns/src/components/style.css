@@ -12,8 +12,9 @@
   position: relative;
   border: 2px solid var(--blue);
   border-radius: 0.2rem;
-  width: 240px;
-  height: 50px;
+  max-width: 15rem;
+  width: 13rem;
+  height: 3rem;
   font-family: "Roboto", sans-serif;
   color: black;
   font-size: 1rem;
@@ -31,7 +32,7 @@
 }
 
 .dropdownSelected {
-  width: 210px;
+  width: 11.5rem;
   height: 50px;
   float: left;
   overflow: hidden;
